@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for artwork in object_list %}
+            {% if artwork.hero > 0 %}
+                <div class="col-sm p-3 align-items-center ">
+                    <img class="img-fluid rounded" src="{{ artwork.art.url }}" />
+                </div>    
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
