@@ -6,7 +6,9 @@
     <div class="row">
         {% for artwork in object_list %}
             <div class="col-sm p-3 align-items-center">
-                <img class="img-fluid rounded" src="{{ artwork.art.url }}" />
+                <a href="{% url 'artwork_detail' artwork.pk artwork.title %}">
+                    <img class="img-fluid rounded" src="{{ artwork.art.url }}" />
+                </a>
             </div>
             {% if forloop.counter|divisibleby:"3" %}
                 </div>
