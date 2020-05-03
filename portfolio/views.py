@@ -20,7 +20,7 @@ class ArtworkDetailView(DetailView):
 class AboutView(ListView):
     model = About
     template_name = 'about.html'
-    #queryset = About.objects.filter(current_photo='enabled')
+    queryset = About.objects.filter(Q(current_photo='enabled'))
 
 
 
