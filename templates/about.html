@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for about in object_list %}
+            <div class="col-sm">
+                <p>{{ about.about_text }}</p>
+            </div>
+            <div class="col-sm p-3 align-items-center">
+                <img class="img-fluid rounded" src="{{ about.about_photo.url}}" alt="{{ about.about_photo_name }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
