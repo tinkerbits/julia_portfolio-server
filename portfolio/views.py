@@ -1,6 +1,6 @@
 
-from django.views.generic import ListView, TemplateView, DetailView
-from .models import Artwork, About
+from django.views.generic import ListView, TemplateView, DetailView, CreateView
+from .models import Artwork, About, Contact
 #from django.shortcuts import render #still needed?
 from django.db.models import Q
 
@@ -22,9 +22,11 @@ class AboutView(ListView):
     template_name = 'about.html'
     queryset = About.objects.filter(Q(current_photo='enabled'))
 
+class ContactView(CreateView):
+    fields = ['name', 'email', 'message']
+    model = Contact
+    template_name = 'contact.html'
+    success_url = '/success/'
 
-
-
-
-
-
+class ContactSuccessView(TemplateView):
+    template_name = 'contact-success.html'

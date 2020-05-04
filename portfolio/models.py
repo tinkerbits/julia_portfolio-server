@@ -29,3 +29,9 @@ class About(models.Model):
 
     def __str__(self):
         return self.about_photo_name
+
+class Contact(models.Model):
+    uploaddate = models.DateField(auto_now_add=True)
+    name = models.CharField(max_length=100, null=False, blank=False)
+    email = models.EmailField()
+    message = models.TextField(null=False, blank=False)
