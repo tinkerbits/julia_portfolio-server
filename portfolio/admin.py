@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Artwork, About
+from .models import Artwork, About, Message
 
 # Register your models here.
 
@@ -15,6 +15,18 @@ class AboutAdmin(admin.ModelAdmin):
         else:
             return obj.about_text
 
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('date', 'name', 'email', 'message_summary')
+
+    def message_summary(self, obj):
+        if len(obj.message) > 75:
+            return ('%s' % (obj.message)[:75]+'... (etc.)')
+        else:
+            return obj.message
+
+
+
 
 admin.site.register(Artwork, ArtworkAdmin)
 admin.site.register(About, AboutAdmin)
+admin.site.register(Message, MessageAdmin)

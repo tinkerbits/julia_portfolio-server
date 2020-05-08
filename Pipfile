@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 django = "==3.0"
 pillow = "*"
+slackclient = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.6"

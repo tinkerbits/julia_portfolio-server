@@ -1,8 +1,9 @@
 
 from django.views.generic import ListView, TemplateView, DetailView, CreateView
-from .models import Artwork, About, Contact
+from .models import Artwork, About, Message
 #from django.shortcuts import render #still needed?
 from django.db.models import Q
+
 
 class HomeView(ListView):
     model = Artwork
@@ -24,7 +25,7 @@ class AboutView(ListView):
 
 class ContactView(CreateView):
     fields = ['name', 'email', 'message']
-    model = Contact
+    model = Message
     template_name = 'contact.html'
     success_url = '/success/'
 

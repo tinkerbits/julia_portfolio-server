@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+from decouple import config
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,6 +43,10 @@ INSTALLED_APPS = [
 
     #Local
     'portfolio.apps.PortfolioConfig',
+
+    #3rd Party
+    'slack', #for slack
+    
 ]
 
 MIDDLEWARE = [
@@ -126,3 +132,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #for serving images in portfolio
 
 MEDIA_URL = '/media/' #for serving images in portfolio
+
+BOT_USER_ACCESS_TOKEN = config('BOT_USER_ACCESS_TOKEN')
