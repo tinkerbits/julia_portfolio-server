@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+
 {% block content %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Send message">
-</form>
+<div class="container messageform">
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          {% if field.name == 'message' %}
+              {{ field|attr:"rows:4"|as_crispy_field }}
+          {% else %}
+              {{ field|as_crispy_field }}
+          {% endif %}
+        {% endfor %}
+        <div class="centerstuff">
+            <button type="submit" class="btn btn-outline-dark submitbut">Submit</button>
+        </div>
+    </form>
+</div>
 
 {% endblock content %}

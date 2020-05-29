@@ -12,13 +12,18 @@ class Artwork(models.Model):
     description = models.TextField(null=True, blank=True)
     herochoices = [('left', 'left'), ('middle', 'middle'), ('right', 'right')]
     hero = models.CharField(choices=herochoices, max_length=6, null=True, blank=True, unique=True, error_messages={'unique':'Another artwork already uses this hero position.'})  
-    slug = slugify(title, allow_unicode=False)
+    slug = models.SlugField(null=True, blank=True, max_length=160, editable=False)
 
     def __str__(self):
         return self.title
 
-    def get_absolute_urls(self):
-        return reverse('artwork_list', kwargs={'slug': self.slug})
+    def get_absolute_url(self):
+        return reverse('artwork_detail', kwargs={'slug': self.slug})
+
+    #to save the title as slug (see https://learndjango.com/tutorials/django-slug-tutorial):#
+    def save(self, *args, **kwargs): 
+        self.slug = slugify(self.title)
+        super(Artwork, self).save(*args, **kwargs)
 
 
 class About(models.Model):

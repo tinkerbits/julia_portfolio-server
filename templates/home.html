@@ -2,15 +2,16 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        {% for artwork in object_list %}
-            <div class="col-sm p-3 align-items-center">
-                <img class="img-fluid rounded" src="{{ artwork.art.url }}" />
-                <p>{{ artwork.hero }}</p> <!--for testing-->
-            </div>
-        {% endfor %}
-    </div>
+<div class="row">
+    {% for artwork in object_list %}
+        <div class="col-sm-12 col-md-4 p-3"> <!--take 12 colums on small screens, 4 on medium screens or larger and put padding to 3.-->
+            <img class="img-fluid rounded" src="{{ artwork.art.url }}" alt="{{ artwork.title}}"/>
+        </div>
+    {% endfor %}
 </div>
 
+<br>
+<p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum magni molestiae dolore voluptatum ex qui. Ducimus numquam nesciunt nobis ipsum nisi est quas? Iste facilis laudantium aliquid, quia sapiente neque!</p>
+
 {% endblock content %}
+

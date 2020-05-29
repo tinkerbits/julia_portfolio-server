@@ -1,21 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="container">
-    <div class="row">
+    <div class="card-columns"> <!--This creates a masonry style layout (see: https://www.youtube.com/watch?v=JQERoDLGWtk)-->
         {% for artwork in object_list %}
-            <div class="col-sm p-3 align-items-center">
-                <a href="{% url 'artwork_detail' artwork.pk artwork.title %}">
-                    <img class="img-fluid rounded" src="{{ artwork.art.url }}" />
+            <div class="masonimg"> <!--This creates a masonry style layout (see: https://www.youtube.com/watch?v=JQERoDLGWtk)-->
+                <a href="{% url 'artwork_detail' artwork.pk artwork.slug %}">
+                    <img class="img-fluid rounded" src="{{ artwork.art.url }}" alt="{{ artwork.date }}" loading="lazy" />
                 </a>
             </div>
-            {% if forloop.counter|divisibleby:"3" %}
-                </div>
-                <div class="row">
-            {% endif %}
         {% endfor %}
     </div>
-</div>
-
 {% endblock content %}
+
+

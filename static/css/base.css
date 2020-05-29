@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*To make sure the scrollbar that is added on longer pages does not push the page to the left,
+and to make sure that any overflow does not produce a horizontal scrollbar*/
+html {
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+/* To style everything within the body: */
+body {
+  background-color: #ffffff;
+  color: #3a3a3a;
+  /*font-family: 'Amatic SC', cursive, sans-serif;*/
+  font-family: 'Poppins', sans-serif;
+  font-size: 14pt;
+  font-weight: 300;
+}
+
+/* To style the home button: */
+div.homelogo {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* To style the navigation bar: */
+nav {
+  background-color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+  font-size: 18pt;
+}
+
+a.nav-link{
+  color: #3a3a3a;
+  text-align: center;
+}
+
+a.nav-link:hover{
+  color: #858585;
+  font-weight: 300;
+  text-align: center;
+
+}
+
+
+/* To position and style the footer: */
+#page-container {
+  position: relative;
+  min-height: 100vh;  
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  background-color: rgb(199, 199, 199);
+  text-align: center;
+}
+
+/* To make the portfolio page responsive: */
+@media (min-width: 576px) {
+  div.card-columns {
+    column-count: 1;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  div.card-columns {
+    column-count: 4;
+    padding: 1rem;
+  }
+}
+
+div.masonimg {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/*To style the artwork detail page:*/
+
+div.artdetaildesc {
+  margin-left: 5%;
+}
+
+div.arrowleft, div.arrowright {
+  position: fixed;
+  top: 50vh;
+  font-size: 20pt;
+  z-index: 1;
+}
+
+div.arrowleft > a:visited {
+  color: #3a3a3a;
+}
+
+div.arrowright > a:visited {
+  color: #3a3a3a;
+}
+
+div.arrowleft {
+  left: 1vw;
+}
+
+div.arrowright {
+  right: 1vw;
+}
+
+h1.reenie {
+  font-family: 'Reenie Beanie', cursive;
+}
+
+/*To position the About-text and About-image*/
+div.aboutrowcontainer {
+  align-items: center;
+  text-align: center;
+}
+
+div.aboutpiccontainer {
+  height: 70vh;
+}
+
+img.aboutpic {
+  height: 100%;
+}
+
+/*To style the elements Contact page*/
+
+div.messageform {
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-bottom: 1%;
+}
+
+.form-control {
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+.centerstuff {
+  text-align: center;
+}
+
+button.submitbut {
+  font-size: 18pt;
+  font-weight: 300;
+}

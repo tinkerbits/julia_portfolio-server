@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
 
     #3rd Party
-    'slack', #for slack
-    
+    'slack', #lets you communicate with Slack
+    'widget_tweaks', #lets you modify form fields inside the template (no model editing needed)
+    'crispy_forms', #styles your form fields
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #for serving images in portfolio
 MEDIA_URL = '/media/' #for serving images in portfolio
 
 BOT_USER_ACCESS_TOKEN = config('BOT_USER_ACCESS_TOKEN')
+
+STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

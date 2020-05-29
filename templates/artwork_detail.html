@@ -2,16 +2,41 @@
 
 {% block content %}
 
-<div class="container">
-    <h1>{{ artwork.title|title}}</h1>
     <div class="row">
-        <div class="col-sm p-3 align-items-center">
+        
+        <div class="col-sm-1">
+            <div class="arrowleft">
+                {% if artwork.get_previous_by_date.id == '' %}
+                    <a href="/artwork/{{ view.latest_artwork.id }}/{{ view.latest_artwork.slug }}/">
+                {% else %}
+                    <a href="/artwork/{{ artwork.get_previous_by_date.id }}/{{ artwork.get_previous_by_date.slug }}/">
+                {% endif %}
+                    <span class="material-icons" style="font-size: 30pt">keyboard_arrow_left</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-sm p-2 align-items-center centerstuff">
                 <img class="img-fluid rounded" src="{{ artwork.art.url}}" alt="{{ artwork.title }}">
         </div>
-        <div class="col-sm">
+        
+        <div class="col-sm p-2 centerstuff artdetaildesc">
+            <h1 class="reenie">{{ artwork.title|title}}</h1>
             <p>{{ artwork.description }}</p>
         </div>
+        
+        <div class="col-sm-1">
+            <div class="arrowright">
+                {% if artwork.get_next_by_date.id == '' %}
+                    <a href="/artwork/{{ view.earliest_artwork.id }}/{{ view.earliest_artwork.slug }}/">
+                {% else %}
+                    <a href="/artwork/{{ artwork.get_next_by_date.id }}/{{ artwork.get_next_by_date.slug }}/">
+                {% endif %}
+                    <span class="material-icons" style="font-size: 30pt">keyboard_arrow_right</span>
+                </a>
+            </div>
+        </div>
+
     </div>
-</div>
 
 {% endblock content %}

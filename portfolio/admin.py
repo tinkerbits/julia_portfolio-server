@@ -6,6 +6,7 @@ from .models import Artwork, About, Message
 class ArtworkAdmin(admin.ModelAdmin):
     list_display = ('title', 'hero')
 
+
 class AboutAdmin(admin.ModelAdmin):
     list_display = ('uploaddate', 'about_photo_name', 'about_text_summary', 'current_photo')
 
