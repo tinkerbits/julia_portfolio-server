@@ -27,7 +27,7 @@ SECRET_KEY = 'icaf9gt(05+ch@(f0-axywm_=ubaifab8*+@pz1rqpk*yazc^%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['82.14.222.233', 'juliamurschel.com', 'www.juliamurschel.com']
 
 
 # Application definition
@@ -86,8 +86,12 @@ WSGI_APPLICATION = 'julia_portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'julia_portfolio',
+	'USER': 'julia_portfolio_user',
+	'PASSWORD': 'nocojones',
+	'HOST': 'localhost',
+	'PORT': '',
     }
 }
 
@@ -136,6 +140,8 @@ MEDIA_URL = '/media/' #for serving images in portfolio
 
 BOT_USER_ACCESS_TOKEN = config('BOT_USER_ACCESS_TOKEN')
 
-STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
