@@ -34,7 +34,7 @@ div.homelogo {
 /* To style the navigation bar: */
 nav {
   background-color: #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 .navbar-nav > li{
@@ -66,13 +66,22 @@ a.nav-link:hover{
   padding-bottom: 2.5rem;
 }
 
+#footerspacer {
+  height: 1.5rem;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 2.5rem;
-  background-color: rgb(199, 199, 199);
-  text-align: center;
+  background-color: rgb(245, 245, 245);
+  font-size: 12pt;
+
+  /*to align footer text center - see https://www.quora.com/How-do-I-center-the-text-of-my-footer-in-my-CSS*/
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 }
 
 /* To make the portfolio page responsive: */
@@ -151,8 +160,8 @@ div.messageform {
 }
 
 .form-control {
-  font-size: 18pt;
-  font-weight: 700;
+  font-size: 14pt;
+  font-weight: 400;
 }
 
 .centerstuff {
