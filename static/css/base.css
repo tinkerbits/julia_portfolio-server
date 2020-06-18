@@ -84,6 +84,12 @@ a.nav-link:hover{
   justify-content: center;
 }
 
+/* To style the home page text */
+a.nounderline:hover {
+  text-decoration: none;
+  font-weight: 700;
+}
+
 /* To make the portfolio page responsive: */
 @media (min-width: 576px) {
   div.card-columns {

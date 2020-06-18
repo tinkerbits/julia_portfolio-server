@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -88,10 +88,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'julia_portfolio',
-	'USER': config('DB_USER'),
-	'PASSWORD': config('DB_PW'),
-	'HOST': 'localhost',
-	'PORT': '',
+	    'USER': config('DB_USER'),
+	    'PASSWORD': config('DB_PW'),
+	    'HOST': 'localhost',
+	    'PORT': '',
     }
 }
 
