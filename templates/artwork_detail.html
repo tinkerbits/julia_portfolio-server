@@ -20,11 +20,6 @@
                 <img class="img-fluid rounded" src="{{ artwork.art.url}}" alt="{{ artwork.title }}">
         </div>
         
-        <div class="col-sm p-2 centerstuff artdetaildesc">
-            <h1 class="reenie">{{ artwork.title|title}}</h1>
-            <p>{{ artwork.description }}</p>
-        </div>
-        
         <div class="col-sm-1">
             <div class="arrowright">
                 {% if artwork.get_next_by_date.id == '' %}
@@ -39,4 +34,10 @@
 
     </div>
 
+	<div class="row">
+        <div class="col-sm centerstuff artdetaildesc">
+            <h1 class="reenie">{{ artwork.title|title}}</h1>
+            <p class="artdetaildescmargin">{{ artwork.description }}</p>
+        </div>
+	</div>
 {% endblock content %}

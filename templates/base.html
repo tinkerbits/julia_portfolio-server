@@ -10,6 +10,9 @@
     <!--Block Title-->
     <title>{% block title %}Portfolio{% endblock title %}</title>
 
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/media/misc/favicon.ico"/>
+
     <!--Font & Icons-->
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
@@ -30,7 +33,7 @@
         <div id="content-wrap">
             
             <div class="homelogo">
-                <a href="{% url 'home' %}"><img src="https://www.python.org/static/community_logos/python-powered-w-100x40.png" alt="logo"></a>
+                <a href="{% url 'home' %}"><img id="logoimg" src="/media/misc/dummy_logo.png" alt="logo"></a>
             </div>
 
             <!--Navigation Bar-->
