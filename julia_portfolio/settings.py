@@ -140,7 +140,7 @@ MEDIA_URL = '/media/' #for serving images in portfolio
 
 BOT_USER_ACCESS_TOKEN = config('BOT_USER_ACCESS_TOKEN')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+'''STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]'''
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 

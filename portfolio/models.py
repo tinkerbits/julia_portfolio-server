@@ -25,7 +25,7 @@ class Artwork(models.Model):
         self.slug = slugify(self.title)
         super(Artwork, self).save(*args, **kwargs)
 
-
+'''
 class About(models.Model):
     uploaddate = models.DateField(auto_now_add=True)
     about_photo = models.ImageField(upload_to='about/%Y', null=True, blank=True)
@@ -36,6 +36,7 @@ class About(models.Model):
 
     def __str__(self):
         return self.about_photo_name
+'''
 
 class Message(models.Model):
     date = models.DateField(auto_now_add=True)
@@ -49,9 +50,10 @@ class Message(models.Model):
 # Below is a Django Signal that listens to the save() method being called on the Post model and then sends a message to the Slack API.
 def save_post(sender, instance, **kwargs):
     name = instance.name
+    email = instance.email
     message = instance.message
     slackbot = WebClient(token=settings.BOT_USER_ACCESS_TOKEN)
-    slackbot.chat_postMessage(channel='julia-portfolio', text = f'*{name}* sent a message:\n\"_{message}_\"')
+    slackbot.chat_postMessage(channel='julia-portfolio', text = f'*<mailto:{email}?body={message}|{name}>* sent a message:\n\"_{message}_\"')
 
 post_save.connect(save_post, Message)
 

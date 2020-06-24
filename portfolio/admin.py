@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Artwork, About, Message
+from .models import Artwork, Message#, About
 
 # Register your models here.
 
 class ArtworkAdmin(admin.ModelAdmin):
     list_display = ('title', 'hero')
 
-
+'''
 class AboutAdmin(admin.ModelAdmin):
     list_display = ('uploaddate', 'about_photo_name', 'about_text_summary', 'current_photo')
 
@@ -15,6 +15,7 @@ class AboutAdmin(admin.ModelAdmin):
             return ('%s' % (obj.about_text)[:75]+'... (etc.)')
         else:
             return obj.about_text
+'''
 
 class MessageAdmin(admin.ModelAdmin):
     list_display = ('date', 'name', 'email', 'message_summary')
@@ -29,5 +30,5 @@ class MessageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Artwork, ArtworkAdmin)
-admin.site.register(About, AboutAdmin)
+'''admin.site.register(About, AboutAdmin)'''
 admin.site.register(Message, MessageAdmin)

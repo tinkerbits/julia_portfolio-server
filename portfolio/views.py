@@ -1,6 +1,6 @@
 
 from django.views.generic import ListView, TemplateView, DetailView, CreateView
-from .models import Artwork, About, Message
+from .models import Artwork, Message#, About 
 #from django.shortcuts import render #still needed?
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
@@ -30,10 +30,11 @@ class ArtworkDetailView(DetailView):
     def latest_artwork(self):
         return Artwork.objects.latest('id')
 
-class AboutView(ListView):
-    model = About
+class AboutView(TemplateView):
     template_name = 'about.html'
-    queryset = About.objects.filter(Q(current_photo='enabled'))
+    '''model = About
+    queryset = About.objects.filter(Q(current_photo='enabled'))'''
+
 
 class ContactView(CreateView):
     fields = ['name', 'email', 'message']
