@@ -25,18 +25,6 @@ class Artwork(models.Model):
         self.slug = slugify(self.title)
         super(Artwork, self).save(*args, **kwargs)
 
-'''
-class About(models.Model):
-    uploaddate = models.DateField(auto_now_add=True)
-    about_photo = models.ImageField(upload_to='about/%Y', null=True, blank=True)
-    about_photo_name = models.CharField(max_length=200, null=True, blank=True, unique=True, error_messages={'unique':'Another profile photo with this name already exists.'})
-    about_text = models.TextField(null=True, blank=True)
-    current_photo_choices = [('enabled', 'enabled')]
-    current_photo = models.CharField(choices=current_photo_choices, max_length=7, null=True, blank=True, unique=True, error_messages={'unique':'Another photo is already enabled as about-me photo.'})
-
-    def __str__(self):
-        return self.about_photo_name
-'''
 
 class Message(models.Model):
     date = models.DateField(auto_now_add=True)

@@ -1,7 +1,6 @@
 
 from django.views.generic import ListView, TemplateView, DetailView, CreateView
-from .models import Artwork, Message#, About 
-#from django.shortcuts import render #still needed?
+from .models import Artwork, Message
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -32,8 +31,6 @@ class ArtworkDetailView(DetailView):
 
 class AboutView(TemplateView):
     template_name = 'about.html'
-    '''model = About
-    queryset = About.objects.filter(Q(current_photo='enabled'))'''
 
 
 class ContactView(CreateView):
