@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div class="row">
+    <div class="row artworkspacer">
         
         <div class="col-sm-1">
             <div class="arrowleft">
@@ -16,7 +16,7 @@
             </div>
         </div>
         
-        <div class="col-sm p-2 align-items-center centerstuff">
+        <div class="col-sm p-2 centerstuff">
                 <img class="img-fluid rounded" src="{{ artwork.art.url}}" alt="{{ artwork.title }}">
         </div>
         
@@ -34,10 +34,15 @@
 
     </div>
 
-	<div class="row">
-        <div class="col-sm centerstuff artdetaildesc">
+
+	<div class="row artworkspacer">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm p-2 centerstuff artdetaildesc">
             <h1 class="reenie">{{ artwork.title|title}}</h1>
             <p class="artdetaildescmargin">{{ artwork.description }}</p>
+        </div>
+        <div class="col-sm-1">
         </div>
 	</div>
 {% endblock content %}

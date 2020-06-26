@@ -115,11 +115,15 @@ div.masonimg {
 
 /*To style the artwork detail page:*/
 
+div.artworkspacer {
+  margin-top: 1.5rem;
+}
+
 div.artdetaildesc {
   padding-top: 1.5rem;
   padding-bottom: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  /*padding-left: 1rem;
+  padding-right: 1rem;*/
 
 }
 
@@ -182,4 +186,19 @@ div.messageform {
 button.submitbut {
   font-size: 18pt;
   font-weight: 300;
+}
+
+/*To style the Contact Success page*/
+
+div.textspacer {
+  margin-top: 4rem;
+}
+
+div.picspacer {
+  margin-top: 3rem;
+}
+
+img.successpic {
+  max-width: 20vw;
+  min-width: 150px;
 }
