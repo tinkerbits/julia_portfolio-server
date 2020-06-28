@@ -1,0 +1,6 @@
+#Guide search engines to the sitemap and prevent them from crawling the success & admin pages
+
+Sitemap: https://juliamurschel.com/sitemap.xml
+User-agent: *
+Disallow: /success/
+Disallow: /admin/

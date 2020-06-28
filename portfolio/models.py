@@ -18,7 +18,7 @@ class Artwork(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('artwork_detail', kwargs={'slug': self.slug})
+        return reverse('artwork_detail', kwargs={'pk': self.pk, 'slug': self.slug})
 
     #to save the title as slug (see https://learndjango.com/tutorials/django-slug-tutorial):#
     def save(self, *args, **kwargs): 
@@ -41,7 +41,7 @@ def save_post(sender, instance, **kwargs):
     email = instance.email
     message = instance.message
     slackbot = WebClient(token=settings.BOT_USER_ACCESS_TOKEN)
-    slackbot.chat_postMessage(channel='julia-portfolio', text = f'*<mailto:{email}?body={message}|{name}>* sent a message:\n\"_{message}_\"')
+    slackbot.chat_postMessage(channel='julia-portfolio', text = f'*<mailto:{email}?body={message}|{name}>* sent a message:\n_{message}_')
 
 post_save.connect(save_post, Message)
 

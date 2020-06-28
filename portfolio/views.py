@@ -41,3 +41,7 @@ class ContactView(CreateView):
 
 class ContactSuccessView(TemplateView):
     template_name = 'contact-success.html'
+
+class RobotView(TemplateView):
+    template_name = 'robots.txt'
+    content_type = 'text/plain'

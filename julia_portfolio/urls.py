@@ -17,9 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings #for serving images in portfolio
 from django.conf.urls.static import static #for serving images in portfolio
+from django.contrib.sitemaps.views import sitemap #servesitemap
 
+from portfolio.sitemaps import ArtworkSitemap #servesitemap
+
+sitemaps = { #servesitemap
+    'artworks': ArtworkSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'), #servesitemap
+
     path('', include('portfolio.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #for serving images in portfolio

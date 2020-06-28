@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = True#config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Local
+    'django.contrib.sites', #servesitemap
+    'django.contrib.sitemaps', #servesitemap
     'portfolio.apps.PortfolioConfig',
 
     #3rd Party
@@ -49,6 +51,8 @@ INSTALLED_APPS = [
     'widget_tweaks', #lets you modify form fields inside the template (no model editing needed)
     'crispy_forms', #styles your form fields
 ]
+
+SITE_ID = 1 #servesitemap
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
