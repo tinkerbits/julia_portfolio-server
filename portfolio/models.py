@@ -6,7 +6,8 @@ from slack import WebClient
 from django.conf import settings
 
 class Artwork(models.Model):
-    date = models.DateField(auto_now_add=True)
+    created_dt = models.DateField(auto_now_add=True)
+    updated_dt = models.DateTimeField(auto_now=True)
     art = models.ImageField(upload_to='artworks/%Y')
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)

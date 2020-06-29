@@ -5,7 +5,7 @@
         {% for artwork in object_list %}
             <div class="masonimg"> <!--This creates a masonry style layout (see: https://www.youtube.com/watch?v=JQERoDLGWtk)-->
                 <a href="{% url 'artwork_detail' artwork.pk artwork.slug %}">
-                    <img class="img-fluid rounded" src="{{ artwork.art.url }}" alt="{{ artwork.date }}" loading="lazy" />
+                    <img class="img-fluid rounded" src="{{ artwork.art.url }}" alt="{{ artwork.title }}" loading="lazy" />
                 </a>
             </div>
         {% endfor %}

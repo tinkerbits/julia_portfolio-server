@@ -4,7 +4,7 @@ from .models import Artwork, Message#, About
 # Register your models here.
 
 class ArtworkAdmin(admin.ModelAdmin):
-    list_display = ('title', 'hero')
+    list_display = ('created_dt', 'title', 'hero')
 
 '''
 class AboutAdmin(admin.ModelAdmin):

@@ -11,4 +11,4 @@ class ArtworkSitemap(Sitemap):
         return Artwork.objects.all()
 
     def lastmod(self, obj):
-        return obj.date
+        return obj.updated_dt
