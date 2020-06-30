@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'slack', #lets you communicate with Slack
     'widget_tweaks', #lets you modify form fields inside the template (no model editing needed)
     'crispy_forms', #styles your form fields
+    'snowpenguin.django.recaptcha3', #allows for Recaptcha v3 bot protection, see https://github.com/kbytesys/django-recaptcha3
 ]
 
 SITE_ID = 1 #servesitemap
@@ -149,3 +150,10 @@ BOT_USER_ACCESS_TOKEN = config('BOT_USER_ACCESS_TOKEN')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+#Recaptcha settings:
+RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_SECRET_KEY')
+RECAPTCHA_PUBLIC_KEY = config('RECAPTCHA_SITE_KEY')
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_SCORE_TRESHOLD = config('RECAPTCHA_SCORE_TRESHOLD')

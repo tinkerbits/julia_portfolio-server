@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 
+{% load recaptcha3 %}
 {% load widget_tweaks %}
 {% load crispy_forms_tags %}
+
+
+{% block recaptcha %}
+    {% recaptcha_init %}
+    {% recaptcha_ready action_name='contactpage' %}
+{% endblock recaptcha %}
+
 
 {% block content %}
 
